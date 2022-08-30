@@ -1,0 +1,20 @@
+<div class="row navbar-header">
+    <div class="col-6 col-md-2 col-lg-2 col-xl-2 text-center align-middle">
+        <img src="../../../assets/APLogo.png" class="logo">
+        <div class="social small"><a  *ngFor="let Soc of social" href="{{Soc.link}}" class="social" >{{social.nombre}</a></div>
+    </div>
+    <div class="big col-md-2 col-lg-2 col-xl-2 text-center align-middle">
+        <app-my-list></app-my-list>
+    </div>
+    <div class="big social col-md-6 col-lg-6 col-xl-6 text-center align-middle">
+        <a  *ngFor="let Soc of social" href="{{Soc.link}}" class="socialIco" >{{Soc.nombre}}</a>
+        <app-go [mode]="'Social'" [route]="'/lista'" [name]="'EDITAR'" [other]="'no'"></app-go>
+    </div>
+    <div class="col-6 col-md-2 col-lg-2 col-xl-2 text-center align-middle">
+        <app-login></app-login>
+        <app-sing-up></app-sing-up>
+        <app-my-list class="small" ></app-my-list>
+        <app-all-list></app-all-list>   
+    </div>
+</div>
+

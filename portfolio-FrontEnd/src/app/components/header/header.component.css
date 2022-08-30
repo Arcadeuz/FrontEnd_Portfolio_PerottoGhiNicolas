@@ -1,0 +1,64 @@
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.row{
+    background-color: var(--main-color);
+    vertical-align: middle;
+    height: 10vh;
+    position: sticky; top: 0; z-index: 1;
+}
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+app-logo-ap{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.vertical-align{
+   padding-top: 2vh;
+}
+.button{
+    height: 5vh;
+}
+
+@media screen and (max-width: 767px) {
+    .big{
+        display:none;
+    }
+
+    .logo{
+        height: 7vh;
+    }
+    .social{
+        height: 3vh;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .small{
+        display:none;
+    }
+
+    .logo{
+        height: 10vh;
+    }
+    .social{
+        height: 7vh;
+    }
+}
+
+.socialIco{
+    font-family: SocialMediaCircled; 
+    color: white;
+    font-size: 3em;
+    text-decoration:none;
+}
+

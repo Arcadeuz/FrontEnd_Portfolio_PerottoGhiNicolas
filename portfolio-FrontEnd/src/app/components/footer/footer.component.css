@@ -1,0 +1,19 @@
+.row{
+    background-color: white;
+    height: 6vh;
+    position: sticky; bottom: -1px; z-index: 1;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+p{ 
+    color:black;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 2px 2px 5px #000;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

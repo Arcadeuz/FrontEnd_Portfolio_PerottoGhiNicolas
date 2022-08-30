@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --main-color: blue;
+  }
+
+body {
+    background: linear-gradient(0deg, white 0 10%, rgb(238, 236, 236) 60% 80%, var(--main-color) 90%);
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 767px) {
+    .big {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .small {
+        display: none;
+    }
+}
+
+h1 {
+    font-weight: 900;
+    color: black;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+
+}
+
+@font-face {
+    font-family: "SocialMediaCircled";
+    src:  url("assets/fonts/SocialMediaCircled.otf") format("truetype");
+    font-style: normal;
+}
+
+button{
+ background-color:  var(--main-color) !important;
+}

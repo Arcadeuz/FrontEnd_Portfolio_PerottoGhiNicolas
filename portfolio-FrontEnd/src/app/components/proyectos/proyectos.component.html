@@ -1,0 +1,27 @@
+<div class="row" #proyectos>
+    <div class="col-lg-12"  (inViewportAction)="action($event)">  
+        <h1><app-add [mode]="'Proyecto'"></app-add> Proyectos</h1>
+    </div>
+    <div class="col-lg-12">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Prys of proyecto">
+                    <td>
+                        <h4>{{Prys.nombre}}</h4>
+                        <app-edit [mode]="'Proyecto'" [idComponent]="Prys.id"></app-edit>
+                        <app-delete [mode]="'Proyecto'" [idComponent]="Prys.id"></app-delete>
+                        <br>
+                        <img class="imgProyecto" src="{{Prys.fotoProyecto}}">
+                    </td>
+                    <td class="text-center align-middle">
+                       <p>{{Prys.descripcion}}</p>                     
+                    </td>
+                    <td class="text-center align-middle">
+                        <p>fecha de Inicio: {{Prys.fechaInicio}}</p>
+                        <p>fecha de Terminación: {{Prys.fechaFin}}</p>                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

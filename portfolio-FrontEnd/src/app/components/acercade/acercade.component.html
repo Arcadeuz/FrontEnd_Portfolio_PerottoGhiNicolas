@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-8 col-md-4 col-lg-4 col-xl-4">
+        <img src="{{persona.fotoPerfil}}" alt="{{persona.fotoPerfil}}" class="go-up img-fluid">
+       <div class="big">
+            <h5 class="nombre">{{persona.nombre}}</h5>
+            <h5 class="nombre">{{persona.apellido}}</h5>
+            <app-edit [mode]="'Persona'" [idComponent]="persona.id"></app-edit>
+            <app-delete [mode]="'Persona'" [idComponent]="persona.id" ></app-delete>
+            <app-add [mode]="'Persona'"></app-add>
+       </div>
+    </div>
+    <div class="small col-4 go-up2">
+        <h5 class="nombre">{{persona.nombre}}</h5>
+        <h5 class="nombre">{{persona.apellido}}</h5>
+        <app-edit [mode]="'Persona'" [idComponent]="persona.id"></app-edit>
+        <app-delete [mode]="'Persona'" [idComponent]="persona.id" ></app-delete>
+        <app-add [mode]="'Persona'"></app-add>
+   </div>
+
+    <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+            <h1>Acerca de Mí</h1>
+            <p>{{persona.acercaDeMi}}</p>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="row" #habilidades>
+    <div class="col-lg-12">
+        <h1><app-add [mode]="'Habilidad'"></app-add>Hard & Soft Skills</h1>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-4 contCircs" *ngFor="let habs of habilidad">
+        <circle-progress [percent]="habs.porcentaje" [title]="habs.nombre"></circle-progress>
+        <br>
+        <app-edit [mode]="'Habilidad'" [idComponent]="habs.id"></app-edit>
+        <app-delete [mode]="'Habilidad'" [idComponent]="habs.id"></app-delete>
+    </div>
+</div>
