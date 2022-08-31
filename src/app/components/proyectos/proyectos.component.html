@@ -2,6 +2,9 @@
     <div class="col-lg-12"  (inViewportAction)="action($event)">  
         <h1><app-add [mode]="'Proyecto'"></app-add> Proyectos</h1>
     </div>
+    <div class="col-12" *ngIf="proyecto.length === 0">
+        <h1>Loading...</h1>
+    </div>
     <div class="col-lg-12">
         <table class="table">
             <tbody>

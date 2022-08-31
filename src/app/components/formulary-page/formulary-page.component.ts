@@ -141,7 +141,7 @@ export class FormularyPageComponent implements OnInit {
     } else  if (["color"].includes(aVar) ) {    
       return "color"  
     } else {
-      return "undefinned"
+      return "hidden";
     }
   }
 

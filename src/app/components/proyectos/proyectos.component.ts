@@ -9,6 +9,7 @@ import { SessionService } from 'src/app/service/session.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
+  cargado = false
   centrado = false;
   proyecto: Proyecto[] = [];
   @ViewChild('proyectos') div!: ElementRef;
@@ -16,7 +17,7 @@ export class ProyectosComponent implements OnInit {
   constructor(private proyectoService: ProyectoService, private sessionService: SessionService) { }
 
   ngOnInit(): void {
-    this.cargarExperiencia();
+    //this.cargarProyecto();
   }
 
   action(event: any): void {
@@ -25,16 +26,19 @@ export class ProyectosComponent implements OnInit {
       alert("aca");
     }
   }
-  cargarExperiencia(): void {
-    let personaId = this.sessionService.getVisiblePersonaId();
-    this.proyectoService.list(personaId).subscribe(data => { this.proyecto = data; })
+  cargarProyecto(): void {
+    if(!this.cargado){
+      let personaId = this.sessionService.getVisiblePersonaId();
+      this.proyectoService.list(personaId).subscribe(data => { this.proyecto = data; });
+      this.cargado = true;
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: any) {
     const windowHeight = window.innerHeight;
     const boundingRectFive = this.div.nativeElement.getBoundingClientRect();
-   
+    if (boundingRectFive.top <= windowHeight) this.cargarProyecto();  
     if (boundingRectFive.top >= 0 && boundingRectFive.top <= windowHeight/2) {
       this.centrar();
       this.centrado = true;

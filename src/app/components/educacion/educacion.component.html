@@ -1,6 +1,12 @@
 <div class="row" #educaciones>
-      <div class="col-12">
-        <h1><app-add [mode]="'Educacion'"></app-add>Educacion</h1>
+    <div class="col-12">
+        <h1>
+            <app-add [mode]="'Educacion'"></app-add>Educacion
+        </h1>
+    </div>
+
+    <div class="col-12" *ngIf="educacion.length === 0">
+        <h1>Loading...</h1>
     </div>
 
     <div class="col-12">
@@ -10,7 +16,7 @@
                     <td>
                         <h4>{{educ.nombre}}</h4>
                         <app-edit [mode]="'Educacion'" [idComponent]="educ.id"></app-edit>
-                        <app-delete [mode]="'Educacion'" [idComponent]="educ.id" ></app-delete>
+                        <app-delete [mode]="'Educacion'" [idComponent]="educ.id"></app-delete>
                     </td>
                     <td>
                         <p>{{educ.descripcion}}</p>

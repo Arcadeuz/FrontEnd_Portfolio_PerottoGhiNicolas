@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appConfigs } from 'src/app/app-config';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 import { SessionService } from 'src/app/service/session.service';
@@ -10,7 +11,7 @@ import { SessionService } from 'src/app/service/session.service';
 })
 export class MypeoplesPageComponent implements OnInit {
   persona: Persona[] = [];
-  url = "http://localhost:4200/?id=";
+  url = window.location.origin + "/?id=";
   constructor(private personaService: PersonaService,private sessionService: SessionService) { }
 
   ngOnInit(): void {

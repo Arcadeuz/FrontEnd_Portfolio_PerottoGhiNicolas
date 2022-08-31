@@ -32,7 +32,7 @@ export class SessionService {
   }
 
   public checkMyPersona():boolean {
-    return (this.getVisiblePersonaOwner() == this.tokenService.getUserName()) || this.checkAdmin();
+    return (this.tokenService.getUserName() && (this.getVisiblePersonaOwner() == this.tokenService.getUserName()) || this.checkAdmin());
   }
 
   public checkAdmin():boolean {

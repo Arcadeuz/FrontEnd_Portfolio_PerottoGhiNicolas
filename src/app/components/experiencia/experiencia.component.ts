@@ -10,6 +10,7 @@ import { SessionService } from 'src/app/service/session.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
+  cargado = false;
   centrado = false;
   experiencia: Experiencia[] = [];
   @ViewChild('experiencias') div!: ElementRef;
@@ -17,18 +18,22 @@ export class ExperienciaComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.cargarExperiencia();
+    //this.cargarExperiencia(); al sacarlo de ngOnInit mejora sustancialmente el manejo del ancho de banda
+    //                          y la actualziacion 
   }
   cargarExperiencia(): void {
-    let personaId = this.sessionService.getVisiblePersonaId();
-    this.experinciaService.list(personaId).subscribe(data => { this.experiencia = data; })
+    if (!this.cargado){
+      let personaId = this.sessionService.getVisiblePersonaId();
+      this.experinciaService.list(personaId).subscribe(data => { this.experiencia = data; });
+      this.cargado = true;
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: any) {
     const windowHeight = window.innerHeight;
     const boundingRectFive = this.div.nativeElement.getBoundingClientRect();
-   
+    if (boundingRectFive.top <= windowHeight) this.cargarExperiencia();
     if (boundingRectFive.top >= 0 && boundingRectFive.top <= windowHeight/2) {
       this.centrar();
       this.centrado = true;
